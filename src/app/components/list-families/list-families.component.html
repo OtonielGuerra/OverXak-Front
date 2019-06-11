@@ -1,0 +1,11 @@
+<h2 style="text-align:center">Lista de familias:</h2>
+
+<mat-list>
+  <mat-list-item *ngFor="let family of familias" (click)="Options(family)">
+    <mat-icon matListIcon>people</mat-icon>
+    <h3 matLine> <b>Familia de {{family.padre.name}} {{family.madre.name}}</b></h3>
+    <p matLine>
+      <span>Encargad@: {{family.encargado.name}} </span>
+    </p>
+  </mat-list-item>
+</mat-list>

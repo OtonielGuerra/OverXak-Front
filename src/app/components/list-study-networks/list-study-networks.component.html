@@ -1,0 +1,12 @@
+<h2 style="text-align:center">Redes de estudio:</h2>
+
+<mat-list>
+    <mat-list-item *ngFor="let red of redes">
+      <mat-icon matListIcon>device_hub</mat-icon>
+      <h3 matLine> {{red.name}} </h3>
+      <p matLine>
+        <span> {{red.dateStart}} </span>
+        <span class="demo-2"> -- {{red.dateFinish}} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>

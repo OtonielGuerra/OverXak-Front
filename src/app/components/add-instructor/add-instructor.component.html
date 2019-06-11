@@ -1,0 +1,36 @@
+<h2 style="text-align:center">Crear instructor</h2>
+<form class="add-form">
+  <div style="text-align:center">
+      <mat-form-field appearance="outline" class="m-md-width">
+          <mat-label>Código de profesor</mat-label>
+          <input matInput placeholder="Código de profesor" [(ngModel)]="instructor.code" name="code"  autocomplete="off">
+          <mat-icon matSuffix>person_pin</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-md-width">
+          <mat-label>Persona</mat-label>
+          <mat-select [(ngModel)]="instructor.data" name="dat">
+            <mat-option *ngFor="let person of persons" [value]="person">
+              {{person.primer_nombre}} {{person.segundo_nombre}} {{person.primer_apellido}} {{person.segundo_apellido}}
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>person_pin</mat-icon>
+        </mat-form-field>
+      <mat-form-field appearance="outline" class="m-md-width">
+          <mat-label>Profesión</mat-label>
+          <input matInput placeholder="Ingrese Profesión" [(ngModel)]="instructor.profession" name="professsion"  autocomplete="off">
+          <mat-icon matSuffix>person_pin</mat-icon>
+      </mat-form-field>
+  </div>
+
+
+    <div style="text-align:center">
+      <button mat-raised-button color="primary" (click)="onSubmit()">
+        <mat-icon>save</mat-icon>
+        Guardar</button>
+        &nbsp;
+        <button mat-raised-button color="warn" (click)="Close()">
+            <mat-icon>close</mat-icon>
+            Cerrar</button>
+    </div>
+
+</form>

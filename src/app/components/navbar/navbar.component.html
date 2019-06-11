@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+  <span>Administración de procesos educativos</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span>
+    <button mat-button matTooltip="Estás en ésta página">Inicio</button>
+    <button mat-button (click)="Families()">Familias</button>
+    <button mat-button [matMenuTriggerFor]="courseMenu" matTooltip="Crea cursos">Cursos</button>
+    <button mat-button [matMenuTriggerFor]="careerMenu" matTooltip="Agrega carreras">Carreras</button>
+    <button mat-button [matMenuTriggerFor]="instructorMenu" matTooltip="Ingresa nuevos instructores">Instructores</button>
+    <button mat-button [matMenuTriggerFor]="assignMenu" matTooltip="Asigna, crea estudiantes">Estudiantes</button>
+    <mat-menu #careerMenu="matMenu">
+      <button mat-menu-item (click)="AddCareer()">
+        Crear carrera
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-menu-item (click)="ListCarreers()">
+          Listar carreras
+          <mat-icon>list</mat-icon>
+        </button>
+    </mat-menu>
+    <mat-menu #courseMenu="matMenu">
+        <button mat-menu-item (click)="AddCourse()">
+          Crear curso
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-menu-item (click)="ListCourses()">
+          Listar cursos
+          <mat-icon>list</mat-icon>
+        </button>
+        <button mat-menu-item (click)="AddNetwork()">
+          Crear red de estudio
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-menu-item (click)="ListNetworks()">
+            Listar redes de estudio
+            <mat-icon>list</mat-icon>
+          </button>
+      </mat-menu>
+      <mat-menu #instructorMenu="matMenu">
+          <button mat-menu-item (click)="AddInstructor()">
+            Crear instructor
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-menu>
+        <mat-menu #assignMenu="matMenu">
+          <button mat-menu-item (click)="AssignStudent()">
+            Asignar estudiante
+            <mat-icon>class</mat-icon>
+          </button>
+        </mat-menu>
+  </span>
+</mat-toolbar>

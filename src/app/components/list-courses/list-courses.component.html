@@ -1,0 +1,13 @@
+<h2 style="text-align:center">Lista de cursos:</h2>
+
+<mat-list>
+  <mat-list-item *ngFor="let course of courses">
+    <mat-icon matListIcon>book</mat-icon>
+    <h3 matLine> <b>{{course.nombre}} </b>
+    </h3>
+    <p matLine>
+      <span> {{course.codigo}} </span>
+      <span class="demo-2"> -- {{course.descripcion}} </span>
+    </p>
+  </mat-list-item>
+</mat-list>

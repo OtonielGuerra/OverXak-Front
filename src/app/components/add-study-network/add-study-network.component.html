@@ -1,0 +1,46 @@
+<h2 style="text-align:center">Crear red de estudios</h2>
+<form class="add-form">
+    <div style="text-align:center">
+
+        <mat-form-field appearance="outline" class="m-md-width">
+            <mat-label>Nombre de la red</mat-label>
+            <input matInput placeholder="Ingrese nombre de la red" [(ngModel)]="studyNetwork.name" name="code" autocomplete="off">
+            <mat-icon matSuffix>person_pin</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="m-md-width">
+            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="pickerS" placeholder="Elegir fecha de inicio" [(ngModel)]="studyNetwork.dateStart" name="dateS">
+            <mat-datepicker-toggle matSuffix [for]="pickerS"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #pickerS></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="m-md-width">
+            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="pickerF" placeholder="Elegir fecha de fin" [(ngModel)]="studyNetwork.dateFinish" name="dateF">
+            <mat-datepicker-toggle matSuffix [for]="pickerF"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #pickerF></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="m-md-width">
+            <mat-label>Cursos</mat-label>
+            <mat-select multiple [(ngModel)]="studyNetwork.courses" name="sons">
+                <mat-option>
+                    <ngx-mat-select-search (change)="getAll()" (focus)="getAll()" (input)="SearchKids($event)" [placeholderLabel]="'Buscar cursos...'" [noEntriesFoundLabel]="'No hay resultados'" name="filter"></ngx-mat-select-search>
+                </mat-option>
+                <mat-option *ngFor="let curso of courses" [value]="curso._id">{{curso.nombre}}</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>school</mat-icon>
+        </mat-form-field>
+
+    </div>
+
+
+    <div style="text-align:center">
+        <button mat-raised-button color="primary" (click)="onSubmit()">
+        <mat-icon>save</mat-icon>
+        Guardar</button> &nbsp;
+        <button mat-raised-button color="warn" (click)="Close()">
+            <mat-icon>close</mat-icon>
+            Cerrar</button>
+    </div>
+
+</form>

@@ -1,0 +1,64 @@
+<h2 style="text-align:center">Asignar estudiante:</h2>
+
+<div style="text-align:center">
+  <mat-radio-group aria-label="Elegir opción" [(ngModel)]="option" name="sc">
+    <mat-radio-button value="cet">Centro Educativo Técnico</mat-radio-button>&nbsp;
+    <mat-radio-button value="ets">Escuela Técnica Superior</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<div style="text-align:center" *ngIf="option === 'cet'">
+  <h2>Asignar a CET:</h2>
+
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>Carrera</mat-label>
+    <mat-select [(ngModel)]="jornada.carrera">
+      <mat-option *ngFor="let carreer of carreers" [value]="carreer.nombre">
+        {{carreer.nombre}}
+      </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>class</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>Grado</mat-label>
+    <mat-select [(ngModel)]="jornada.grado">
+      <mat-option *ngFor="let grado of grados" [value]="grado">
+        {{grado}}
+      </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>class</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>Seccion</mat-label>
+    <mat-select [(ngModel)]="jornada.seccion">
+      <mat-option *ngFor="let seccion of secciones" [value]="seccion">
+        {{seccion}}
+      </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>class</mat-icon>
+  </mat-form-field>
+</div>
+
+<div style="text-align:center">
+<h2>Jornada:</h2>
+<mat-form-field appearance="outline" class="example-full-width">
+  <mat-label>Jornada</mat-label>
+  <mat-select [(ngModel)]="jornada.jornada">
+    <mat-option *ngFor="let jornada of jornadas" [value]="jornada">
+      {{jornada}}
+    </mat-option>
+  </mat-select>
+  <mat-icon matSuffix>class</mat-icon>
+</mat-form-field>
+</div>
+
+<div style="text-align:center">
+  <button mat-raised-button color="primary" (click)="onSubmit()">
+  <mat-icon>save</mat-icon>
+  Guardar</button> &nbsp;
+  <button mat-raised-button color="warn" (click)="Close()">
+      <mat-icon>close</mat-icon>
+      Cerrar</button>
+</div>

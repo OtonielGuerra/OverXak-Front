@@ -1,0 +1,33 @@
+<h2 style="text-align:center">Crear carrera</h2>
+<form class="add-form">
+  <div style="text-align:center">
+      <mat-form-field appearance="outline" class="m-md-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre de la carrera" [(ngModel)]="career.nombre" name="name"  autocomplete="off">
+          <mat-icon matSuffix>school</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-md-width">
+          <mat-label>Código</mat-label>
+          <input matInput placeholder="Código de la carrera" [(ngModel)]="career.codigo" name="code" autocomplete="off">
+          <mat-icon matSuffix>school</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-md-width">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput placeholder="Descripción de la carrera" cdkTextareaAutosize [(ngModel)]="career.descripcion" name="description" autocomplete="off"></textarea>
+          <mat-icon matSuffix>school</mat-icon>
+      </mat-form-field>
+  </div>
+
+
+    <div style="text-align:center">
+      <button mat-raised-button color="primary" (click)="onSubmit()">
+        <mat-icon>save</mat-icon>
+        Guardar</button>
+        &nbsp;
+        <button mat-raised-button color="warn" (click)="Close()">
+            <mat-icon>close</mat-icon>
+            Cerrar</button>
+    </div>
+
+</form>
+

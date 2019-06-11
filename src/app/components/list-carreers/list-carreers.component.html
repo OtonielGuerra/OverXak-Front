@@ -1,0 +1,12 @@
+<h2 style="text-align:center">Carreras:</h2>
+
+<mat-list>
+    <mat-list-item *ngFor="let carrera of carreras">
+      <mat-icon matListIcon>school</mat-icon>
+      <h3 matLine> {{carrera.nombre}} </h3>
+      <p matLine>
+        <span> {{carrera.descripcion}} </span>
+        <span class="demo-2"> -- {{carrera.codigo}} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
